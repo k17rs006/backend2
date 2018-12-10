@@ -70,7 +70,7 @@
     function updateData() {
       UTdata.fetch()
       .then(function(uTdata){
-        var value = $("#update").val();
+        var value = parseInt($("#update").val());
         uTdata.set(key,value);
         return uTdata.update();
       })
@@ -90,6 +90,17 @@
     }
 
     function countData() {
+      UTdata.count().fetchAll()
+      .then(function(results){
+        $("#display").removeClass();
+        $("#display").addClass("bg-succes");
+        $("#display").html("results.count");
+      })
+      .catch(function(error){
+        $("#diplay").removeClass();
+        $("#display").addClass("bg-warnig");
+        $("#display").html("count fail:"+ JSON.stringify(error));
+      })
     }
 
     function sortData() {
