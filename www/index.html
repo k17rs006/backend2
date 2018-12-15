@@ -60,7 +60,7 @@
         
       })
       .catch(function(error){
-        $("#diplay").removeClass();
+        $("#display").removeClass();
         $("#display").addClass("bg-warnig");
         $("#display").html("delete fail:"+ JSON.stringify(error));
         
@@ -82,7 +82,7 @@
         
       })
       .catch(function(error){
-        $("#diplay").removeClass();
+        $("#display").removeClass();
         $("#display").addClass("bg-warnig");
         $("#display").html("update fail:"+ JSON.stringify(error));
         
@@ -94,16 +94,34 @@
       .then(function(results){
         $("#display").removeClass();
         $("#display").addClass("bg-succes");
-        $("#display").html("results.count");
+        $("#display").html(results.count);
       })
       .catch(function(error){
-        $("#diplay").removeClass();
+        $("#display").removeClass();
         $("#display").addClass("bg-warnig");
         $("#display").html("count fail:"+ JSON.stringify(error));
       })
     }
 
     function sortData() {
+      UTdata.order(key,true).fetchAll()
+      .then(function(results){
+        var msg = "";
+        for(var i = 0; i < results.length;i++){
+          msg += results[i].get(key) + "<br>";
+        }
+        $("#display").removeClass();
+        $("#display").addClass("text-light");
+        $("#display").addClass("bg-primary");
+        $("#display").html(msg);
+        
+      })
+        .catch(function(error){
+        $("#display").removeClass();
+        $("#display").addClass("text-light");
+        $("#display").addClass("bg-primary");
+        $("#display").html(msg);
+        })
     }
   </script>
 </head>
