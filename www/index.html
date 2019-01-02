@@ -13,17 +13,35 @@
 		// にふくら用おまじない
 		  var ncmb = new NCMB(appKey,cliKey);
       var omikujiClass = new OmikujiClass();
+      var OmikujiClass = ncmb.DataStore("OmikujiClass");
+        
+    
+      function omikuji(){
+      /*   NCMB.initialize(appKey, cliKey);
+            var Omikuji = NCMB.Object.extend("OmikujiClass");
+            
+          
+       // var OmikujiClass = ncmb.DataStore("OmikujiClass");
+         OmikujiClass.fetch()
+          .then(function(results){
+            var fortunedata = results.get("fortune");
+            var messagedata = results.get("message");
+            
+           // $("#fetch").html(fortunedata + ":" + messagedata);
+          })
+        */
+
+        var fortune = ["大吉","吉","凶"];
+       
+        var random = Math.floor(Math.random()*fortune.length);
+        $("#fetch").html(fortune[random]);
+        
+          }
       
 
-      function omikuji(){
-        var OmikujiClass = ncmb.DataStore("OmikujiClass");
-        OmikujiClass.fetch()
-          .then(function(results){
-            var data = results.get("message");
-            $("#fetch").html(message);
-          })
-        
-      }
+     
+    
+     
 	</script>
 </head>
 
