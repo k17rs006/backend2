@@ -17,12 +17,11 @@
         
     
       function omikuji(){
-      /*   NCMB.initialize(appKey, cliKey);
-            var Omikuji = NCMB.Object.extend("OmikujiClass");
-            
-          
-       // var OmikujiClass = ncmb.DataStore("OmikujiClass");
-         OmikujiClass.fetch()
+      // NCMB.initialize(appKey, cliKey);
+      // var Omikuji = NCMB.Object.extend("OmikujiClass");  
+      // var OmikujiClass = ncmb.DataStore("OmikujiClass");
+
+      /*   OmikujiClass.fetch()
           .then(function(results){
             var fortunedata = results.get("fortune");
             var messagedata = results.get("message");
@@ -31,12 +30,37 @@
           })
         */
 
-        var fortune = ["大吉","吉","凶"];
+       // var fortune = ["大吉","吉","凶"];
+
+       var dice = Math.floor(Math.random()*3)
        
-        var random = Math.floor(Math.random()*fortune.length);
-        $("#fetch").html(fortune[random]);
-        
-          }
+       // var random = Math.floor(Math.random()*fortune.length);
+       // $("#fetch").html(fortune[random]);
+      if(dice == 0){
+        $("#fetch").html("大吉");
+        fetchdata();
+      
+      }else if(dice == 1){
+        $("#fetch").html("中吉");
+           return -1;
+         
+      }else{
+        $("#fetch").html("小吉");
+           $("#fetch1").html();
+         
+      }
+      }
+      
+
+      function fetchdata(){
+        var OmikujiClass = ncmb.DataStore("OmikujiClass");
+          OmikujiClass.fetch()
+          .then(function(results){
+            var data = results.get("message");
+            
+            $("#fetch1").html(data);
+          })
+      }
       
 
      
@@ -52,6 +76,8 @@
 	<h2 class="text-white bg-info">今年の運勢を占おう！</h2>
   <h3 class="text-dark">
   <div id="fetch">今年の運勢は・・・</div></h3>
+  <h3 class="text-dark">
+  <div id="fetch1">comment here</div></h3>
 	<div align="center">
 		<a onclick="omikuji()" class="btn btn-outline-primary btn-lg btn-block" style="width:200px">占う！</a>
 	</div>
