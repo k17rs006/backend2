@@ -20,7 +20,7 @@
        var dice = Math.floor(Math.random()*3)
     
       if(dice == 0){
-        $("#fetch").html("大吉");
+        $("#fetch").html("大吉！！");
 
         OmikujiClass.equalTo('objectId', '8Ctvw048fpLImxom').fetch().then(function(results) {
         var data = results.get('message');
@@ -30,7 +30,7 @@
       
       }else if(dice == 1){
 
-        $("#fetch").html("吉");  
+        $("#fetch").html("吉！");  
         OmikujiClass.equalTo('objectId', 'gXj00OQG789WCBGm').fetch().then(function(results) {
         var data = results.get('message');
 
@@ -49,38 +49,22 @@
          
           
       }
-      }
-      
-    /*
-      function fetchdata(){
-        var OmikujiClass = ncmb.DataStore("OmikujiClass");
-          OmikujiClass.fetch()
-          .then(function(results){
-            var data = results.get("message");
-            
-            $("#fetch1").html(data);
+      }  
 
-          })
-      }
-*/
-      
-
-    
 	</script>
 </head>
 
 <body>
-	<div align="center">
-		<h1 class="text-white bg-primary">おみくじ</h1>
-	</div>
-	<h2 class="text-white bg-info">今年の運勢を占おう！</h2>
-	<h3 class="text-dark">
+	<h1>おみくじ</h1>
+	<h2>
 		<div id="fetch">今年の運勢は・・・</div>
-	</h3>
-	<h3 class="text-dark">
-		<div id="fetch1">comment here</div>
-	</h3>
-
+    <br>
+    	<div id="fetch1">comment here</div>
+	</h2>
+	
+	
+	
+<br>
 	<div align="center">
 		<a onclick="omikuji()" class="btn btn-outline-primary btn-lg btn-block" style="width:200px">占う！</a>
 	</div>
