@@ -4,7 +4,7 @@
 ## ・プログラムの概要
 <strong>ボタンを押すことでランダムに運勢を表示させ、表示された運勢に応じてNCMBからフェッチしてくるデータを区別する。<strong>
 ## ・使い方
-<img src="https://user-images.githubusercontent.com/44152225/51663478-3b60de80-1ffa-11e9-8b57-addffd853111.jpg" width="320px">
+<img src="https://user-images.githubusercontent.com/44152225/51730935-aa067080-20bc-11e9-87fe-03312ce92dc1.jpg" width="320px">
 
 <strong>画面中央部にある”占う！”と書かれたボタンを押すことで運勢を占うことができる。  
   ボタンは何度でも押すことができる。</strong> 
